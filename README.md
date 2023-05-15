@@ -1,1 +1,4 @@
 # python-stack-queue
+
+Hari ini saya mempelajari Stack dan Queue
+  Dalam mempelajari stack dan queue, kita menemukan kekuatan penyimpanan dan pengaturan data yang efisien. Stack mengajarkan kita tentang pentingnya tumpukan urutan dan konsep Last-In-First-Out (LIFO). Queue mengajarkan kita tentang pentingnya antrian urutan dan konsep First-In-First-Out (FIFO). Mempelajari stack dan queue mengasah kemampuan logika dan pemecahan masalah kita dalam memanipulasi dan mengelola data. Ketika memahami stack dan queue, kita melihat betapa pentingnya penggunaan yang tepat dari push, pop, enqueue, dan dequeue. Stack dan queue membantu kita dalam membangun algoritma yang efisien dan terstruktur untuk menyelesaikan berbagai masalah komputasi. Dalam pemrograman, stack dan queue adalah alat penting yang digunakan untuk mengorganisir dan mengolah data dengan baik.
