@@ -1,5 +1,5 @@
 class Customer:
-    def __init__(self,name,transaction_time):
+    def __init__(self,name,transaction):
         self.name=name
         self.transaction = transaction
 
