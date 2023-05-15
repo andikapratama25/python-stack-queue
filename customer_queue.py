@@ -1,45 +1,56 @@
-antrian = []
+class Customer:
+    def __init__(self,name,transaction_time):
+        self.name=name
+        self.transaction = transaction
 
-def tambah_transaksi(antrian, nama_pelanggan, jenis_transaksi):
-    transaksi = (nama_pelanggan, jenis_transaksi)
-    antrian.append(transaksi)
-    print("Transaksi dari", nama_pelanggan, "dengan jenis", jenis_transaksi, "berhasil ditambahkan ke dalam antrean.")
+class Queue:
+    def __init__(self):
+        self.queue=[]
 
-def transaksi_berikutnya(antrian):
-    if len(antrian) == 0:
-        print("Antrean kosong, tidak ada transaksi yang dapat ditampilkan.")
-    else:
-        nama_pelanggan, jenis_transaksi = antrian[0]
-        print("Transaksi berikutnya adalah dari", nama_pelanggan, "dengan jenis", jenis_transaksi)
+    def is_empty(self):
+        return len(self.queue)==0
+        
+    def enqueue(self, customer):
+        self.queue.append(customer)
 
-def hapus_transaksi(antrian):
-    if len(antrian) == 0:
-        print("Antrean kosong, tidak ada transaksi yang dapat dihapus.")
-    else:
-        nama_pelanggan, jenis_transaksi = antrian[0]
-        print("Transaksi dari", nama_pelanggan, "dengan jenis", jenis_transaksi, "berhasil dihapus dari antrean.")
-        antrian.pop(0)
-
+    def dequeue(self):
+        if self.is_empty():
+            return None
+        return self.queue.pop(0)
+    
+    def display_next_transaction(self):
+        if self.is_empty():
+            print("Antrian Kosong")
+        else:
+            customer = self.queue[0]
+            print(f"Transaksi berikutnya: {customer.transaction} - {customer.name}")
+            
+    def remove_completed_transaction(self):
+        if self.is_empty():
+            print("Antrian Kosong")
+        else:
+            customer = self.queue.pop(0)
+            print(f"Transaksi selesai: {customer.transaction} - {customer.name}")
+            
 while True:
-    print("\nAntrean saat ini:", antrian)
+    print("\nAntrian saat ini:")
     print("Menu:")
     print("1. Tambah Transaksi")
     print("2. Transaksi Berikutnya")
     print("3. Hapus Transaksi")
     print("4. Keluar")
 
-    pilihan = input("Masukkan pilihan Anda (1/2/3/4): ")
+    pilihan = input("Masukkan pilihan: ")
 
     if pilihan == "1":
-        nama_pelanggan = input("Masukkan nama pelanggan: ")
-        jenis_transaksi = input("Masukkan jenis transaksi (misalnya pembelian/tukar tambah/pengembalian): ")
-        tambah_transaksi(antrian, nama_pelanggan, jenis_transaksi)
+        name = input("Masukkan nama pelanggan: ")
+        transaction = input("Masukkan jenis transaksi: ")
+        customer = Customer(name, transaction)
+        print("Transaksi berhasil ditambahkan")
     elif pilihan == "2":
-        transaksi_berikutnya(antrian)
-        if len(antrian) > 0:
-            antrian.pop(0)
+        queue.display_next_transaction()
     elif pilihan == "3":
-        hapus_transaksi(antrian)
+        queue.remove_completed_transaction()
     elif pilihan == "4":
         print("Terima kasih telah menggunakan program ini.")
         break
